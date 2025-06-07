@@ -5,10 +5,19 @@ import connectDB from "./config/db.js";
 import cookieParser from "cookie-parser";
 import examRoutes from "./routes/examRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import cors from "cors"; 
+import path from "path";
 dotenv.config();
 connectDB();
 const app = express();
 const port = process.env.PORT || 5000;
+
+app.use(
+  cors({
+    origin: "https://online-proctoring-system.netlify.app",
+    credentials: true,
+  })
+);
 
 
 app.use(express.json());
