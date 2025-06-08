@@ -15,6 +15,7 @@ const port = process.env.PORT || 5000;
 app.use(
   cors({
     origin: "https://online-proctoring-system.netlify.app",
+    methods: ["GET", "POST"],
     credentials: true,
   })
 );
